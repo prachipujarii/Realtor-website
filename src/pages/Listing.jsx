@@ -57,7 +57,7 @@ export default function Listing() {
         pagination={{ type: "progressbar" }}
         effect="fade"
         modules={[EffectFade]}
-        autoplay={{ delay: 1500 }}
+        autoplay={{ delay: 1000 }}
       >
         {listing.imgUrls.map((url, index) => (
           <SwiperSlide key={index}>
@@ -164,7 +164,7 @@ export default function Listing() {
             />
             <Marker position={[51.505, -0.09]}>
               <Popup>
-                A pretty CSS3 popup. <br /> Easily customizable.
+                {listing.address}
               </Popup>
             </Marker>
           </MapContainer>

@@ -25,8 +25,6 @@ export default function CreateListing() {
     bathrooms: 1,
     parking: false,
     furnished: false,
-    country: "",
-    city: "",
     address: "",
     description: "",
     offer: false,
@@ -42,8 +40,6 @@ export default function CreateListing() {
     bedrooms,
     bathrooms,
     parking,
-    country,
-    city,
     address,
     furnished,
     description,
@@ -165,8 +161,6 @@ export default function CreateListing() {
       geolocation,
       timestamp: serverTimestamp(),
       userRef: auth.currentUser.uid,
-      country,
-      city,
     };
     delete formDataCopy.images;
     !formDataCopy.offer && delete formDataCopy.discountedPrice;
@@ -305,25 +299,7 @@ export default function CreateListing() {
           </button>
         </div>
         <p className="text-lg mt-6 font-semibold">Address</p>
-        <input
-          type="text"
-          id="country"
-          value={country}
-          onChange={onChange}
-          placeholder="Country"
-          required
-          className="w-full px-4 py-2 text-xl text-gray-700 bg-white border border-gray-300 rounded transition duration-150 ease-in-out focus:text-gray-700 focus:bg-white focus:border-slate-600 mb-6"
-        />
-        <input
-          type="text"
-          id="city"
-          value={city}
-          onChange={onChange}
-          placeholder="City"
-          required
-          className="w-full px-4 py-2 text-xl text-gray-700 bg-white border border-gray-300 rounded transition duration-150 ease-in-out focus:text-gray-700 focus:bg-white focus:border-slate-600 mb-6"
-        />
-        <input
+        <textarea
           type="text"
           id="address"
           value={address}
